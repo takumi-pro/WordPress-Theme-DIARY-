@@ -1,22 +1,43 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 481px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1030px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+
 //===============================
 //変数
 //===============================
+
 $baseColor: #ffffff;
 $mainColor: #4290c0;
 $subColor: #223367;
 $accentColor: #ff0902;
 
 $margin: 0 auto;
-$padding: 0 40px;
+$padding40: 0 40px;
+$padding24: 0 24px;
 $width100: 100%;
+$width70: 70%;
 $height100: 100%;
 
 @import "../Foundation/reset";
 @import "../Layout/header";
+@import "../Layout/content";
+
+@import "../Object/project/page";
 @import "../Object/Component/nav";
+@import "../Object/Component/page";
+
 @import "../Object/Utility/color";
 @import "../Object/Utility/flex";
 

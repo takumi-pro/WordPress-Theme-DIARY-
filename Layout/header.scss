@@ -1,8 +1,9 @@
 .l-header{
     height: auto;
+    position: relative;
     &__inner{
         max-width: 1180px;
-        padding: $padding;
+        padding: $padding40;
         margin: $margin;
         height: $height100;
         display: flex;
@@ -19,6 +20,14 @@
                     padding-right: 0;
                 }
             }
+            @include mq($breakpoint: md){
+                margin: $margin;
+            }
+        }
+    }
+    @include mq($breakpoint: md){
+        &__inner{
+            padding: $padding24;
         }
     }
 }
