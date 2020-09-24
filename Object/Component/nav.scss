@@ -1,0 +1,9 @@
+.c-nav{
+    &__link{
+        line-height: 60px;
+        display: inline-block;
+        color: $baseColor;
+        height: 60px;
+        padding: 0 1em;
+    }
+}

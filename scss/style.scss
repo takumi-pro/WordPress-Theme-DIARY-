@@ -1,0 +1,22 @@
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+//===============================
+//変数
+//===============================
+$baseColor: #ffffff;
+$mainColor: #4290c0;
+$subColor: #223367;
+$accentColor: #ff0902;
+
+$margin: 0 auto;
+$padding: 0 40px;
+$width100: 100%;
+$height100: 100%;
+
+@import "../Foundation/reset";
+@import "../Layout/header";
+@import "../Object/Component/nav";
+@import "../Object/Utility/color";
+@import "../Object/Utility/flex";
+
