@@ -1,0 +1,28 @@
+.c-widget{
+    background-color: $baseColor;
+    margin-bottom: 2.5em;
+    &__bar{
+        background-color: $mainColor;
+        color: $baseColor;
+        padding: 8px 13px;
+        font-size: 1.4em;
+    }
+    .c-textwidget{
+        padding-bottom: 1em;
+    }
+    &__list{
+        padding: 8px 10px;
+    }
+    &__item{
+        font-weight: bold;
+    }
+    &__link{
+        display: block;
+        padding: 8px;
+        color: $sidebarColor;
+        &:hover{
+            color: $sidebarColor;
+            background-color: #efefef;
+        }
+    }
+}

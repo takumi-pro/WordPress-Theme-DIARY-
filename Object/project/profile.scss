@@ -1,0 +1,31 @@
+.p-profile{
+    &__img{
+        width: 100px;
+        height: 100px;
+        margin: 14px auto 0;
+    }
+    .p-name{
+        font-size: 1.4em;
+        text-align: center;
+        padding: 0 10px;
+        margin: 0.5em 0;
+    }
+    &__content{
+        padding: 0 15px;
+    }
+    &__text{
+        font-size: 0.9em;
+        margin-bottom: 1em;
+
+    }
+    &__detail{
+        p{
+            text-align: center;
+        }
+    }
+}
+.p-detail__link{
+    margin: 0.5em;
+    font-size: 0.89em;
+    padding: 5px 10px;
+}

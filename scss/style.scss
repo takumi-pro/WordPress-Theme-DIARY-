@@ -22,22 +22,35 @@ $baseColor: #ffffff;
 $mainColor: #4290c0;
 $subColor: #223367;
 $accentColor: #ff0902;
+$color555: #555;
+$sidebarColor: #626262;
 
 $margin: 0 auto;
 $padding40: 0 40px;
 $padding24: 0 24px;
 $width100: 100%;
+$width95: 95%;
 $width70: 70%;
+$width30: 30%;
 $height100: 100%;
 
 @import "../Foundation/reset";
+@import "../Foundation/base";
+
 @import "../Layout/header";
 @import "../Layout/content";
+@import "../Layout/sidebar";
 
 @import "../Object/project/page";
+@import "../Object/project/pagenation.scss";
+@import "../Object/project/profile";
 @import "../Object/Component/nav";
 @import "../Object/Component/page";
+@import "../Object/Component/widget";
+@import "../Object/Component/pagenation";
 
 @import "../Object/Utility/color";
 @import "../Object/Utility/flex";
+@import "../Object/Utility/llink";
+@import "../Object/Utility/img";
 

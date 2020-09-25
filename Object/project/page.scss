@@ -4,8 +4,23 @@
     &__each{
         width: 48%;
         margin-bottom: 25px;
+        background-color: $baseColor;
+        box-shadow: 0 0 3px 0 rgba(0,0,0,0.12),
+                    0 2px 3px 0 rgba(0,0,0,0.22);
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        border-radius: 2px;
         &:nth-child(odd){
             margin-right: 4%;
         }
+        &:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -5px rgba(0,0,0,0.15),
+            0 0 5px rgba(0,0,0,0.1);
+        }
+    }
+    &__link{
+        display: block;
+        height: 100%;
     }
 }

@@ -1,0 +1,9 @@
+.u-link{
+    &:hover{
+        text-decoration: none;
+        transition: all .4s;
+    }
+    text-decoration: none;
+    font-family: 'M PLUS 1p', sans-serif;
+    transition: all .4s;
+}

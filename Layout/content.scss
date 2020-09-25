@@ -8,6 +8,16 @@
         .l-main{
             width: $width70;
             padding-right: 30px;
+            &__inner{
+                width: $width95;
+                @include mq($breakpoint: lg){
+                    width: $width100;
+                }
+            }
         }
     }
+}
+.l-container{
+    background-color: #eaedf2;
+    
 }
