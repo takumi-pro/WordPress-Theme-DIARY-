@@ -1,5 +1,5 @@
-.c-nav{
-    &__link{
+nav{
+    a{
         line-height: 60px;
         display: inline-block;
         color: $baseColor;
@@ -27,8 +27,11 @@
             text-decoration: none;
         }
     }
+    ul{
+        display: flex;
+    }
     @include mq($breakpoint: md){
-        &__link{
+        a{
             width: $width100;
             transition: all .4s;
             &:hover{
@@ -43,8 +46,10 @@
         display: none;
         top: 60px;
         left: 0;
-        &__menu{
+        ul{
+            display: flex;
             flex-direction: column;
+            
         }
     }
 }

@@ -5,13 +5,27 @@
         max-width: 1180px;
         margin: $margin;
         padding: $padding40;
+        @include mq($breakpoint: md){
+            flex-direction: column;
+            padding: 0;
+        }
+        @include mq(){
+            padding: 0;
+        }
         .l-main{
             width: $width70;
             padding-right: 30px;
+            @include mq($breakpoint: md){
+                width: $width100;
+                padding-right: 0;
+            }
             &__inner{
                 width: $width95;
                 @include mq($breakpoint: lg){
                     width: $width100;
+                }
+                &.p-main__inner{
+                    width: 100%;
                 }
             }
         }

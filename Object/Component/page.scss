@@ -4,14 +4,21 @@
         width: $width100;
         vertical-align: bottom;
     }
+    img{
+        width: $width100;
+        height: 100%;
+    }
 }
 .c-page__title{
     padding-top: 0.5em;
     .c-title{
         margin: 0 14px 8px;
-        font-size: 1.2em;
+        font-size: 1em;
         line-height: 1.56;
         color: #555;
+        @include mq(){
+            font-size: 0.9em;
+        }
     }
 }
 .c-page__link{

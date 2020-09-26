@@ -1,0 +1,13 @@
+.c-archive{
+    background-color: $baseColor;
+    padding: 20px;
+    border-top: 3px solid $mainColor;
+    margin-bottom: 1.5em;
+    &__title{
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        @include mq($breakpoint: lg){
+            font-size: 1.35em;
+        }
+    }
+}

@@ -28,6 +28,7 @@ $sidebarColor: #626262;
 $margin: 0 auto;
 $padding40: 0 40px;
 $padding24: 0 24px;
+$padding16: 0 16px;
 $width100: 100%;
 $width95: 95%;
 $width70: 70%;
@@ -40,14 +41,19 @@ $height100: 100%;
 @import "../Layout/header";
 @import "../Layout/content";
 @import "../Layout/sidebar";
+@import "../Layout/footer";
 
 @import "../Object/project/page";
 @import "../Object/project/pagenation.scss";
 @import "../Object/project/profile";
+@import "../Object/project/main";
+
 @import "../Object/Component/nav";
 @import "../Object/Component/page";
 @import "../Object/Component/widget";
 @import "../Object/Component/pagenation";
+@import "../Object/Component/archive";
+@import "../Object/Component/header";
 
 @import "../Object/Utility/color";
 @import "../Object/Utility/flex";

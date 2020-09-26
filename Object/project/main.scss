@@ -1,0 +1,8 @@
+.p-main__inner{
+    width: 100%;
+    background-color: $baseColor;
+    &::before{
+        content: '';
+        display: table;
+    }
+}

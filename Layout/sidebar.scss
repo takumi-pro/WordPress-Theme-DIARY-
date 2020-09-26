@@ -1,3 +1,10 @@
 .l-sidebar{
     width: $width30;
+    @include mq($breakpoint: md){
+        width: $width100;
+        padding: $padding24;
+    }
+    @include mq(){
+        padding: $padding16;
+    }
 }
