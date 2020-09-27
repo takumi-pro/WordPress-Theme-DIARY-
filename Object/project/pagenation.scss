@@ -5,4 +5,10 @@
 .p-pagenation__link{
     background-color: $baseColor;
     color: $mainColor;
+    transition: all .3s;
+    &:hover{
+        background-color: rgb(124, 164, 216);
+        transition: all .3s;
+        text-decoration: none;
+    }
 }

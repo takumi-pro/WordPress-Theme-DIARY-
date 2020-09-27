@@ -7,10 +7,10 @@
         padding: $padding40;
         @include mq($breakpoint: md){
             flex-direction: column;
-            padding: 0;
+            padding: $padding24;
         }
         @include mq(){
-            padding: 0;
+            padding: $padding16;
         }
         .l-main{
             width: $width70;

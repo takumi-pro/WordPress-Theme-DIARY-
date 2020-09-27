@@ -1,4 +1,5 @@
-nav{
+.l-header{
+    nav{
     a{
         line-height: 60px;
         display: inline-block;
@@ -53,6 +54,8 @@ nav{
         }
     }
 }
+}
+
 .c-nav__trigger{
     display: none;
     width: 47px;

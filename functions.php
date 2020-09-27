@@ -106,3 +106,40 @@ class my_widgets_item1 extends WP_Widget{
         }
     }
 }
+
+//ページネーション
+function pagination($pages='',$range=2){
+    $showtime = ($range*2)+1; //表示するページ数
+
+    global $paged; //wordpressで用意されている変数
+    if(empty($paged)) $paged = 1; //デフォルトのページ
+
+    if($pages == ''){
+        global $wp_query;
+        $pages = $wp_query->max_num_pages; //全ページ数取得
+        if(!$pages){
+            $pages = 1;
+        }
+    }
+
+    if(1 != $pages){ //全ページ数が1出ない場合はページネーションを表示する
+        echo "<div class=\"c-pagenation\">\n";
+        echo "<ul class=\"c-pagenation__numbers u-flex\">\n";
+        //prev:現在のページ数が１より大きい場合は表示
+        if($paged > 1) echo "<li class=\"c-pagenation__item\"><a class=\"c-numbers p-pagenation__link\" href='".get_pagenum_link($paged-1)."'>Prev</a></li>\n";
+
+        for($i = 1; $i <= $pages; $i++){
+            if(1 != $pages && (!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showtime)){
+                echo ($paged == $i) ? "<li class=\"c-pagenation__item\">"."<span class=\"c-numbers p-pagenation__current\">".$i."</span>"."</li>\n" : "<li class=\"c-pagenation__item\"><a class=\"c-numbers p-pagenation__link\" href='".get_pagenum_link($i)."'>".$i."</a></li>\n";
+            }
+        }
+        //Next :総ページ数より現在のページ値が小さい場合は表示
+        if($paged < $pages) echo "<li class=\"c-pagenation__item\"><a class=\"c-numbers p-pagenation__link\" href=\"".get_pagenum_link($paged+1)."\">Next</a></li>\n";
+        echo "</ul>\n";
+        echo "</div>\n";
+    }
+}
+
+
+                  
+

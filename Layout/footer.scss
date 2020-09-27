@@ -10,11 +10,16 @@
     }
     &__navlist{
         margin: 5px 0;
+        display: flex;
+        justify-content: center;
     }
     &__link{
-        padding: 5px 16px;
+        position: static;
+        padding: 0 1em;
         margin: 0.5em 0;
         display: inline-block;
+        height: 45px;
+        line-height: 45px;
         background-color: #223367;
         color: #fff;
         font-size: 0.9em;
@@ -27,5 +32,8 @@
     }
     &__home{
         color: $baseColor;
+    }
+    &__item{
+        margin: 0 1em;
     }
 }

@@ -7200,6 +7200,26 @@ body, a {
   line-height: 1.5;
   font-family: 'M PLUS 1p', sans-serif; }
 
+.post-categories {
+  position: absolute;
+  top: 13px;
+  left: 13px; }
+  .post-categories li a:last-child {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #4290c0;
+    padding: 0 10px;
+    font-size: 11px;
+    border-radius: 14px;
+    font-weight: 900;
+    transition: all .4s; }
+    .post-categories li a:last-child:hover {
+      opacity: 0.5;
+      transition: all .4s;
+      text-decoration: none; }
+
 .l-header {
   height: auto;
   position: relative;
@@ -7238,10 +7258,10 @@ body, a {
     @media screen and (max-width: 768px) {
       .l-content__inner {
         flex-direction: column;
-        padding: 0; } }
+        padding: 0 24px; } }
     @media screen and (max-width: 481px) {
       .l-content__inner {
-        padding: 0; } }
+        padding: 0 16px; } }
     .l-content__inner .l-main {
       width: 70%;
       padding-right: 30px; }
@@ -7279,11 +7299,16 @@ body, a {
   .l-footer__home {
     font-size: 0.95em; }
   .l-footer__navlist {
-    margin: 5px 0; }
+    margin: 5px 0;
+    display: flex;
+    justify-content: center; }
   .l-footer__link {
-    padding: 5px 16px;
+    position: static;
+    padding: 0 1em;
     margin: 0.5em 0;
     display: inline-block;
+    height: 45px;
+    line-height: 45px;
     background-color: #223367;
     color: #fff;
     font-size: 0.9em;
@@ -7294,6 +7319,8 @@ body, a {
     opacity: 0.7; }
   .l-footer__home {
     color: #ffffff; }
+  .l-footer__item {
+    margin: 0 1em; }
 
 .p-page {
   display: flex;
@@ -7301,6 +7328,7 @@ body, a {
   .p-page__each {
     width: 48%;
     margin-bottom: 25px;
+    position: relative;
     background-color: #ffffff;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
     cursor: pointer;
@@ -7327,7 +7355,12 @@ body, a {
 
 .p-pagenation__link {
   background-color: #ffffff;
-  color: #4290c0; }
+  color: #4290c0;
+  transition: all .3s; }
+  .p-pagenation__link:hover {
+    background-color: #7ca4d8;
+    transition: all .3s;
+    text-decoration: none; }
 
 .p-profile__img {
   width: 100px;
@@ -7362,7 +7395,7 @@ body, a {
     content: '';
     display: table; }
 
-nav a {
+.l-header nav a {
   line-height: 60px;
   display: inline-block;
   color: #ffffff;
@@ -7370,7 +7403,7 @@ nav a {
   padding: 0 1em;
   position: relative;
   text-decoration: none; }
-  nav a::after {
+  .l-header nav a::after {
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -7381,17 +7414,17 @@ nav a {
     transform: scale(0, 1);
     transform-origin: left top;
     transition: transform .3s; }
-  nav a:hover::after {
+  .l-header nav a:hover::after {
     transform: scale(1, 1); }
-  nav a:hover {
+  .l-header nav a:hover {
     color: white;
     text-decoration: none; }
 
-nav ul {
+.l-header nav ul {
   display: flex; }
 
 @media screen and (max-width: 768px) {
-  nav {
+  .l-header nav {
     position: absolute;
     z-index: 1;
     background-color: #4290c0;
@@ -7399,13 +7432,13 @@ nav ul {
     display: none;
     top: 60px;
     left: 0; }
-    nav a {
+    .l-header nav a {
       width: 100%;
       transition: all .4s; }
-      nav a:hover {
+      .l-header nav a:hover {
         color: white;
         text-decoration: none; }
-    nav ul {
+    .l-header nav ul {
       display: flex;
       flex-direction: column; } }
 
@@ -7445,7 +7478,8 @@ nav ul {
     transform: translateY(-15px) rotate(45deg); }
 
 .c-page__img {
-  width: 100%; }
+  width: 100%;
+  margin: 15px 0; }
   .c-page__img .c-img {
     width: 100%;
     vertical-align: bottom; }
@@ -7453,21 +7487,33 @@ nav ul {
     width: 100%;
     height: 100%; }
 
-.c-page__title {
-  padding-top: 0.5em; }
-  .c-page__title .c-title {
-    margin: 0 14px 8px;
-    font-size: 1em;
-    line-height: 1.56;
-    color: #555; }
-    @media screen and (max-width: 481px) {
-      .c-page__title .c-title {
-        font-size: 0.9em; } }
+.c-page__title .c-title {
+  margin: 0 14px 8px;
+  font-size: 1em;
+  line-height: 1.56;
+  color: #555; }
+  @media screen and (max-width: 481px) {
+    .c-page__title .c-title {
+      font-size: 0.9em; } }
+
+.c-page__title .c-content {
+  margin-bottom: 1em;
+  padding: 0 13px; }
 
 .c-page__link {
-  display: block;
   height: 100%;
   padding-bottom: 10px; }
+
+.c-cate .post-categories {
+  position: static;
+  margin-bottom: 1em;
+  padding: 0 13px; }
+
+.c-page__time {
+  margin: 13px 13px 8px;
+  color: #b5b5b5;
+  font-size: 13px;
+  display: block; }
 
 .c-widget {
   background-color: #ffffff;
@@ -7492,6 +7538,30 @@ nav ul {
         background-color: #efefef;
         transition: all .3s;
         text-decoration: none; }
+  .c-widget__form {
+    position: relative; }
+  .c-widget__search {
+    outline: none;
+    width: 100%;
+    padding-right: 48px;
+    height: 45px;
+    border-radius: 3px;
+    border: none;
+    font-size: 1em;
+    display: block;
+    line-height: 45px;
+    padding: 0 0 0 10px; }
+  .c-widget__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 45px;
+    width: 45px;
+    border: none;
+    color: #ffffff;
+    border-radius: 0 3px 3px 0;
+    font-size: 22px;
+    background-color: #4290c0; }
 
 .c-pagenation {
   margin: 1.5em 0; }
@@ -7521,11 +7591,55 @@ nav ul {
       .c-archive__title {
         font-size: 1.35em; } }
 
+.c-archive__img {
+  margin: 0;
+  width: 100%; }
+  .c-archive__img img {
+    width: 100%;
+    height: 100%; }
+
 .c-header {
   margin: 25px 40px 10px; }
   .c-header__title {
     font-size: 1.5em;
     margin-top: 1em; }
+  .c-header__time {
+    margin: 15px 0 0 0;
+    font-size: 15px;
+    color: #a5aaaf; }
+
+.c-section {
+  min-height: 200px;
+  padding: 10px 40px;
+  line-height: 2.2em; }
+  .c-section ul {
+    list-style: disc;
+    margin-bottom: 1.3em;
+    padding: 1em 1em 1em 2.5em;
+    border: 2px solid #e8e8e8;
+    border-radius: 3px; }
+  .c-section p {
+    margin: 0 0 1.4em; }
+  .c-section h1 {
+    font-size: 2em;
+    margin: 0.5em 0; }
+  .c-section h2 {
+    font-size: 1.8em;
+    margin: 0.5em 0; }
+  .c-section h3 {
+    font-size: 1.6em;
+    margin: 0.5em 0; }
+  .c-section h4 {
+    font-size: 1.4em;
+    margin: 0.5em 0; }
+  .c-section h5 {
+    font-size: 1.2em;
+    margin: 0.5em 0; }
+  .c-section h6 {
+    font-size: 1em; }
+  @media screen and (max-width: 768px) {
+    .c-section {
+      padding: 10px 25px; } }
 
 .u-main__color {
   background-color: #4290c0; }
@@ -7546,3 +7660,6 @@ nav ul {
 
 .u-img {
   width: 100%; }
+
+.u-p0 {
+  padding: 0; }

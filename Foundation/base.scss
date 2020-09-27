@@ -2,3 +2,25 @@ body,a{
     line-height: 1.5;
     font-family: 'M PLUS 1p', sans-serif;
 }
+.post-categories{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    li a:last-child{
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        color: #fff;
+        background-color: #4290c0;
+        padding: 0 10px;
+        font-size: 11px;
+        border-radius: 14px;
+        font-weight: 900;
+        transition: all .4s;
+        &:hover{
+            opacity: 0.5;
+            transition: all .4s;
+            text-decoration: none;
+        }
+    }
+}

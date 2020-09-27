@@ -20,6 +20,7 @@ $breakpoints: (
 
 $baseColor: #ffffff;
 $mainColor: #4290c0;
+$mainColor2: #a57f2c;
 $subColor: #223367;
 $accentColor: #ff0902;
 $color555: #555;
@@ -54,9 +55,11 @@ $height100: 100%;
 @import "../Object/Component/pagenation";
 @import "../Object/Component/archive";
 @import "../Object/Component/header";
+@import "../Object/Component/section";
 
 @import "../Object/Utility/color";
 @import "../Object/Utility/flex";
 @import "../Object/Utility/llink";
 @import "../Object/Utility/img";
+@import "../Object/Utility/padding";
 
