@@ -36,11 +36,20 @@
                                 </a>
                             </li>
                             <?php endwhile; ?>
-                            <?php endif; ?>
                             
                             
+                            <?php if(function_exists("pagination")) pagination($additional_loop->max_num_pages); ?> 
                         </ul>
-                        <?php if(function_exists("pagination")) pagination($additional_loop->max_num_pages); ?>
+                        <?php else : ?>
+                        <div class="p-page__notfound">
+                            <p class="p-notfound__title">記事が見つかりませんでした。</p>
+                            <p class="p-notfound__img"><img class="u-img" src="<?php echo get_theme_file_uri().'/images/krista-mangulsone-9gz3wfHr65U-unsplash.jpg' ?>" alt=""></p>
+                            <div class="p-notfound__content">
+                                <p class="p-notfound__text">別のキーワードやカテゴリーから記事を探してみましょう。</p>
+                                <?php get_search_form(); ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <?php get_sidebar(); ?>

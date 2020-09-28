@@ -1,6 +1,7 @@
 .l-content{
     margin-top: 2em;
     padding-bottom: 2em;
+    min-height: 80vh;
     &__inner{
         max-width: 1180px;
         margin: $margin;
@@ -15,6 +16,7 @@
         .l-main{
             width: $width70;
             padding-right: 30px;
+            margin-bottom: 1.5em;
             @include mq($breakpoint: md){
                 width: $width100;
                 padding-right: 0;

@@ -4,8 +4,8 @@
                             <div class="c-widget">
                             <?php get_search_form(); ?>
                             </div>
-                        
-
+                            
+                            
                             
                             <?php dynamic_sidebar( 'category' ); ?>
                             

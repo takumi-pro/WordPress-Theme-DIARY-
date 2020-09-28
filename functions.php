@@ -1,4 +1,12 @@
 <?php
+function add_script(){
+    wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'), '', false);
+}
+add_action( 'wp_enqueue_scripts', 'add_script' );
+
+//title
+add_theme_support( 'title-tag' );
+
 //カスタムヘッダー画像を使う
 $custom_header_defaults = array(
     'default-image' => get_bloginfo('template_url').'/image/headers/logo.png',
@@ -34,6 +42,14 @@ function my_widgets_area(){
         'before_title' => '<h4 class="c-widget__bar">',
         'after_title' => '</h4>' 
     ));
+    register_sidebar(array(
+        'name' => 'フッターナビ',
+        'id' => 'footer',
+        'before_widget' => '<div class="l-footer_navlist">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="c-widget__bar">',
+        'after_title' => '</h4>' 
+    ));
 }
 
 //ウィジェット自体を作成する
@@ -41,7 +57,7 @@ class my_widgets_item1 extends WP_Widget{
     //初期化（管理画面で表示するウィジェットの名前を設定する）
     //クラス名と同じにする
     function my_widgets_item1(){
-        parent::WP_Widget(false,$name='メリットウィジェット');
+        parent::WP_Widget(false,$name='フッターウィジェット');
     }
 
     //ウィジェットの入力項目を作成する処理
@@ -49,25 +65,17 @@ class my_widgets_item1 extends WP_Widget{
     function form($instance){
         //サニタイズ
         $title = esc_attr($instance['title']);
-        $body = esc_attr($instance['body']);
+        $url = esc_attr($instance['url']);
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
                 <?php echo 'タイトル：'; ?>
             </label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>">
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">
-                <?php echo 'タイトル：'; ?>
+            <label for="<?php echo $this->get_field_id('url'); ?>">
+                <?php echo 'url：'; ?>
             </label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>">
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('body'); ?>">
-                <?php echo '内容：'; ?>
-            </label>
-            <textarea class="widefat" name="<?php echo $this->get_field_name('body'); ?>" id="<?php echo $this->get_field_id('body'); ?>" cols="30" rows="10"><?php echo $body; ?></textarea>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" value="<?php echo $url; ?>">
         </p>
         <?php
     }
@@ -76,7 +84,7 @@ class my_widgets_item1 extends WP_Widget{
     function update($new_instance,$old_instance){
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']); //タグを取り除く
-        $instance['body'] = trim($new_instance['body']); //空白を取り除く
+        $instance['url'] = trim($new_instance['url']); //空白を取り除く
         return $instance;
     }
 
@@ -87,21 +95,14 @@ class my_widgets_item1 extends WP_Widget{
 
         //ウィジェットから入力された情報を取得
         $title = apply_filters('widget_title',$instance['title']);
-        $body = apply_filters('widget_body',$instance['body']);
+        $url = apply_filters('widget_body',$instance['url']);
 
         //ウィジェットから入力された情報がある場合、htmlを表示する
         if($title){
             ?>
-            <div class="c-widget">
-                <h4 class="c-widget__bar"><?php echo $title; ?></h4>
-                <ul class="c-widget__list">
-                    <li class="c-widget__item"><a href="" class="u-link c-widget__link"><?php echo $body; ?></a></li>
-                    <li class="c-widget__item"><a href="" class="u-link c-widget__link">HTML</a></li>
-                    <li class="c-widget__item"><a href="" class="u-link c-widget__link">JavaScript</a></li>
-                    <li class="c-widget__item"><a href="" class="u-link c-widget__link">PHP</a></li>
-                </ul>
-            </div>
-            
+            <li class="l-footer__item">
+                <a href="<?php echo $url; ?>" class="l-footer__link u-link"><?php echo $title; ?></a>
+            </li>
             <?php
         }
     }

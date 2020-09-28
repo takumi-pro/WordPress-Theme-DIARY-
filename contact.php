@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: プロフィール
+Template Name: お問い合わせ
 */
 
 ?>
@@ -19,10 +19,9 @@ Template Name: プロフィール
                             <h1 class="c-header__title"><?php the_title(); ?></h1>
                         </div>
                         <section class="c-section">
-                            
-                                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                    <?php the_content(); ?>
-                                </div>
+                            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                <?php the_content(); ?>
+                            </div>
                             <?php endwhile; ?>
                             <?php endif; ?>
                         </section>

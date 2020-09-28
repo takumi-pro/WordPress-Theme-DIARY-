@@ -1,3 +1,5 @@
 .u-p0{
+    @include mq($breakpoint: md){
     padding: 0;
+    }
 }

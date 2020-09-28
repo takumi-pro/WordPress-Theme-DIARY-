@@ -1,3 +1,10 @@
+/*
+Theme Name: DIARY
+Description: 自分のブログ用に作成したWordPressテーマです。
+Author: takumi
+Version: 1.0
+*/
+
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -7241,6 +7248,8 @@ body, a {
         font-size: 1.4em; }
         .l-header__inner .l-title__link:last-child {
           padding-right: 0; }
+        .l-header__inner .l-title__link:hover {
+          text-decoration: none; }
       @media screen and (max-width: 768px) {
         .l-header__inner .l-title {
           margin: 0 auto; } }
@@ -7250,7 +7259,8 @@ body, a {
 
 .l-content {
   margin-top: 2em;
-  padding-bottom: 2em; }
+  padding-bottom: 2em;
+  min-height: 80vh; }
   .l-content__inner {
     max-width: 1180px;
     margin: 0 auto;
@@ -7264,7 +7274,8 @@ body, a {
         padding: 0 16px; } }
     .l-content__inner .l-main {
       width: 70%;
-      padding-right: 30px; }
+      padding-right: 30px;
+      margin-bottom: 1.5em; }
       @media screen and (max-width: 768px) {
         .l-content__inner .l-main {
           width: 100%;
@@ -7321,6 +7332,8 @@ body, a {
     color: #ffffff; }
   .l-footer__item {
     margin: 0 1em; }
+  .l-footer a:hover {
+    color: #ffffff; }
 
 .p-page {
   display: flex;
@@ -7333,7 +7346,16 @@ body, a {
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
     cursor: pointer;
     transition: all .2s ease-in-out;
-    border-radius: 2px; }
+    border-radius: 2px;
+    animation: fadeIn 0.7s ease-in-out normal; }
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
     @media screen and (max-width: 481px) {
       .p-page__each {
         width: 100%; } }
@@ -7348,6 +7370,25 @@ body, a {
   .p-page__link {
     display: block;
     height: 100%; }
+  .p-page__notfound {
+    width: 100%;
+    background-color: #fff; }
+
+.p-notfound__title {
+  padding: 1em 0.5em;
+  text-align: center;
+  font-size: 1.1em; }
+
+.p-notfound__content {
+  padding: 2em; }
+  .p-notfound__content .p-notfound__search {
+    background-color: #f2f2f2; }
+
+.p-notfound__text {
+  margin: 1em 0; }
+
+.p-notfound__form {
+  max-width: 400px; }
 
 .p-pagenation__current {
   background-color: #4290c0;
@@ -7378,7 +7419,9 @@ body, a {
 
 .p-profile__text {
   font-size: 0.9em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  line-height: 1.7em;
+  letter-spacing: 0.08em; }
 
 .p-profile__detail p {
   text-align: center; }
@@ -7509,6 +7552,9 @@ body, a {
   margin-bottom: 1em;
   padding: 0 13px; }
 
+.c-content {
+  padding: 0 13px; }
+
 .c-page__time {
   margin: 13px 13px 8px;
   color: #b5b5b5;
@@ -7542,6 +7588,7 @@ body, a {
     position: relative; }
   .c-widget__search {
     outline: none;
+    background-color: #ffffff;
     width: 100%;
     padding-right: 48px;
     height: 45px;
@@ -7562,9 +7609,11 @@ body, a {
     border-radius: 0 3px 3px 0;
     font-size: 22px;
     background-color: #4290c0; }
+  .c-widget:first-child {
+    max-width: 400px; }
 
 .c-pagenation {
-  margin: 1.5em 0; }
+  margin: 1.5em auto; }
   .c-pagenation__numbers {
     padding: 1.5em 0;
     text-align: center;
@@ -7659,7 +7708,9 @@ body, a {
     transition: all .4s; }
 
 .u-img {
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
-.u-p0 {
-  padding: 0; }
+@media screen and (max-width: 768px) {
+  .u-p0 {
+    padding: 0; } }
