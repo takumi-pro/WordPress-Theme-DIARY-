@@ -7553,7 +7553,8 @@ body, a {
   padding: 0 13px; }
 
 .c-content {
-  padding: 0 13px; }
+  padding: 0 13px;
+  margin-bottom: 8px; }
 
 .c-page__time {
   margin: 13px 13px 8px;
@@ -7714,3 +7715,16 @@ body, a {
 @media screen and (max-width: 768px) {
   .u-p0 {
     padding: 0; } }
+
+.c-section label input, .c-section label textarea {
+  width: 100%;
+  border: none;
+  background-color: #eff1f5;
+  border-radius: 3px; }
+
+.c-section input[type="submit"] {
+  border: none;
+  padding: 5px 32px;
+  background-color: #4290c0;
+  color: #fff;
+  border-radius: 3px; }
